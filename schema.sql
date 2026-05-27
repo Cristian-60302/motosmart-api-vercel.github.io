@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+  id BIGSERIAL PRIMARY KEY,
+  nombre VARCHAR(120) NOT NULL,
+  email VARCHAR(160) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  marca VARCHAR(60),
+  modelo VARCHAR(80),
+  anio SMALLINT,
+  kilometraje INTEGER DEFAULT 0,
+  creado_en TIMESTAMPTZ DEFAULT NOW()
+);
